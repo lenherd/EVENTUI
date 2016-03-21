@@ -36,7 +36,8 @@
 <script src="assets/js/ace-extra.min.js"></script>
 
 <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
-
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
 </head>
 <body>
@@ -81,15 +82,15 @@
 						class="menu-icon fa fa-book"></i> <span class="menu-text">
 							Event </span>
 				</a> <b class="arrow"></b></li>
-				
+
 				<li class="active"><a href="Apply.jsp"> <i
-						class="menu-icon fa fa-pencil-square-o"></i> <span class="menu-text">
-							Apply </span>
+						class="menu-icon fa fa-pencil-square-o"></i> <span
+						class="menu-text"> Apply </span>
 				</a> <b class="arrow"></b></li>
 			</ul>
 			<!--  End of nav list-->
 
-			
+
 		</div>
 		<!-- End of sidebar responsive -->
 
@@ -98,8 +99,8 @@
 
 		<div class="page-header">
 			<h2 align="center">
-				<i class="menu-icon fa fa-pencil-square-o red"></i>Application  <small> <i
-					class="ace-icon fa fa-angle-double-right"></i> Kindly Apply here
+				<i class="menu-icon fa fa-pencil-square-o red"></i>Application <small>
+					<i class="ace-icon fa fa-angle-double-right"></i> Kindly Apply here
 				</small>
 
 			</h2>
@@ -107,66 +108,172 @@
 
 
 
-	<div class="col-xs-12 col-sm-6 widget-container-col">
-										<div class="widget-box widget-color-red">
-											<div class="widget-header">
-												<h3 class="widget-title">Ubuntu 
-												<a href="#" >
-														<img src="C:\Users\LENHEARD DEON\Downloads/ubuntu-logo32.png" alt="Smiley face" height="42" width="42"></i>
-													</a></h3>
+		<div class="col-xs-12 col-sm-6 widget-container-col">
+			
+			<div class="space-4"></div>
+			<div class="widget-box widget-color-blue">
+				<div class="widget-header">
+					<h3 class="widget-title">
+						Microsoft <a href="#"> <img
+							src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+							alt="Smiley face" height="42" width="42"></i>
+						</a>
+					</h3>
 
-												<div class="widget-toolbar">
-													
-													<a href="#" data-action="reload">
-														<i class="ace-icon fa fa-refresh"></i>
-													</a>
+					<div ng-app="myApp" ng-controller="myCtrl">
+						<button ng-click="myFunc()"
+							class="btn btn-xs btn-primary pull-right">
+							<span class="bigger-110">Apply</span> <i
+								class="ace-icon fa fa-arrow-right icon-on-right"></i>
+						</button>
+						<div ng-show="showMe">
+							<div class="widget-box widget-color-red">
+														<div class="widget-header">
+															<h3 class="widget-title">Ubuntu 
+															<a href="#" >
+																	<img src="C:\Users\LENHEARD DEON\Downloads/ubuntu-logo32.png" alt="Smiley face" height="42" width="42"></i>
+																</a></h3>
 
-													<a href="#" data-action="collapse">
-														<i class="ace-icon fa fa-chevron-up"></i>
-													</a>
+															<div class="widget-toolbar">
 
-													
-													
-													<a href="#" data-action="close">
-														<i class="ace-icon fa fa-times"></i>
-													</a>
-												
+																<a href="#" data-action="reload">
+																	<i class="ace-icon fa fa-refresh"></i>
+																</a>
 
-												</div>
-												
-											</div>
+																<a href="#" data-action="collapse">
+																	<i class="ace-icon fa fa-chevron-up"></i>
+																</a>
 
 
-											<div class="widget-body">
-												<div class="widget-main">
-													<p class="alert alert-danger">
-														Key Skills:
-														</p>
-													<p class="alert alert-danger">
-														Job Description:
-													</p>
-													
 
-												</div>
+																<a href="#" data-action="close">
+																	<i class="ace-icon fa fa-times"></i>
+																</a>
 
-												<div class="widget-toolbox padding-8 clearfix">
-													
-													<button class="btn btn-xs btn-danger pull-right">
-														<span class="bigger-110">Apply</span>
 
-														<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
-													</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
+															</div>
 
-								<div class="space"></div>
+														</div>
 
-	
 
-	
+														<div class="widget-body">
+															<div class="widget-main">
+																<p class="alert alert-danger">
+																	Key Skills:
+																	</p>
+																<p class="alert alert-danger">
+																	Job Description:
+																</p>
+
+
+															</div>
+
+															<div class="widget-toolbox padding-8 clearfix">
+
+																<button class="btn btn-xs btn-danger pull-right">
+																	<span class="bigger-110">Apply</span>
+
+																	<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+																</button>
+															</div>
+														</div>
+													</div>
+
+						</div>
+
+
+					</div>
+					<script>
+						var app = angular.module('myApp', []);
+						app.controller('myCtrl', function($scope) {
+							$scope.showMe = false;
+							$scope.myFunc = function() {
+								$scope.showMe = !$scope.showMe;
+							}
+						});
+					</script>
+				</div>
+
+
+
+			</div>
+			<div class="space-4"></div>
+
+
+
+
+
+
+			<div class="widget-box widget-color-red">
+				<div class="widget-header">
+					<h3 class="widget-title">
+						Ubuntu <a href="#"> <img
+							src="http://vignette2.wikia.nocookie.net/logopedia/images/2/2d/Ubuntu-old.png/revision/latest?cb=20150920032542"
+							alt="Smiley face" height="42" width="42"></i>
+						</a>
+					</h3>
+
+					<div>
+						<button 
+							class="btn btn-xs btn-danger pull-right">
+							<span class="bigger-110">Apply</span> <i
+								class="ace-icon fa fa-arrow-right icon-on-right"></i>
+						</button>
+						
+					</div>
+					
+				</div>
+
+			</div>
+			<div class="space-4"></div>
+
+
+			<div class="widget-box widget-color-green">
+				<div class="widget-header">
+					<h3 class="widget-title">
+						GreenMart <a href="#"> <img
+							src="http://www.rabbitdigital.com/wp-content/uploads/2013/07/5-green-gradient-background-light-green-lettering-leaf-side-logo-design.jpg"
+							alt="Smiley face" height="42" width="42"></i>
+						</a>
+					</h3>
+
+					<button class="btn btn-xs btn-success pull-right">
+						<span class="bigger-110">Apply</span> <i
+							class="ace-icon fa fa-arrow-right icon-on-right"></i>
+					</button>
+				</div>
+
+
+
+			</div>
+			<div class="space-4"></div>
+			<div class="widget-box widget-color-purple">
+				<div class="widget-header">
+					<h3 class="widget-title">
+						Purple Pages <a href="#"> <img
+							src="http://wsbcc2016.com/wp-content/uploads/2016/01/Purple-Logo.png"
+							alt="Smiley face" height="42" width="42"></i>
+						</a>
+					</h3>
+					<button class="btn btn-xs btn-purple pull-right">
+						<span class="bigger-110">Apply</span> <i
+							class="ace-icon fa fa-arrow-right icon-on-right"></i>
+					</button>
+
+				</div>
+
+
+
+			</div>
+
+		</div>
+	</div>
+
+	<div class="space"></div>
+
+
+
+
 	<jsp:directive.include file="Footer.jsp" />
 	<!--[if !IE]> -->
 	<script src="assets/js/jquery.2.1.1.min.js"></script>
@@ -615,46 +722,56 @@
 						$(this).prev().focus();
 					});
 
-			$('#simple-colorpicker-1').ace_colorpicker({pull_right:true}).on('change', function(){
-				var color_class = $(this).find('option:selected').data('class');
-				var new_class = 'widget-box';
-				if(color_class != 'default')  new_class += ' widget-color-'+color_class;
-				$(this).closest('.widget-box').attr('class', new_class);
-			});
-		
-		
+			$('#simple-colorpicker-1')
+					.ace_colorpicker({
+						pull_right : true
+					})
+					.on(
+							'change',
+							function() {
+								var color_class = $(this).find(
+										'option:selected').data('class');
+								var new_class = 'widget-box';
+								if (color_class != 'default')
+									new_class += ' widget-color-' + color_class;
+								$(this).closest('.widget-box').attr('class',
+										new_class);
+							});
+
 			// scrollables
-			$('.scrollable').each(function () {
+			$('.scrollable').each(function() {
 				var $this = $(this);
 				$(this).ace_scroll({
-					size: $this.attr('data-size') || 100,
-					//styleClass: 'scroll-left scroll-margin scroll-thin scroll-dark scroll-light no-track scroll-visible'
+					size : $this.attr('data-size') || 100,
+				//styleClass: 'scroll-left scroll-margin scroll-thin scroll-dark scroll-light no-track scroll-visible'
 				});
 			});
-			$('.scrollable-horizontal').each(function () {
+			$('.scrollable-horizontal').each(function() {
 				var $this = $(this);
-				$(this).ace_scroll(
-				  {
-					horizontal: true,
-					styleClass: 'scroll-top',//show the scrollbars on top(default is bottom)
-					size: $this.attr('data-size') || 500,
-					mouseWheelLock: true
-				  }
-				).css({'padding-top': 12});
+				$(this).ace_scroll({
+					horizontal : true,
+					styleClass : 'scroll-top',//show the scrollbars on top(default is bottom)
+					size : $this.attr('data-size') || 500,
+					mouseWheelLock : true
+				}).css({
+					'padding-top' : 12
+				});
 			});
-			
+
 			$(window).on('resize.scroll_reset', function() {
 				$('.scrollable-horizontal').ace_scroll('reset');
 			});
-		
-			
-			$('#id-checkbox-vertical').prop('checked', false).on('click', function() {
-				$('#widget-toolbox-1').toggleClass('toolbox-vertical')
-				.find('.btn-group').toggleClass('btn-group-vertical')
-				.filter(':first').toggleClass('hidden')
-				.parent().toggleClass('btn-toolbar')
-			});
-		
+
+			$('#id-checkbox-vertical').prop('checked', false).on(
+					'click',
+					function() {
+						$('#widget-toolbox-1').toggleClass('toolbox-vertical')
+								.find('.btn-group').toggleClass(
+										'btn-group-vertical').filter(':first')
+								.toggleClass('hidden').parent().toggleClass(
+										'btn-toolbar')
+					});
+
 			/**
 			//or use slimScroll plugin
 			$('.slim-scrollable').each(function () {
@@ -664,13 +781,12 @@
 					railVisible:true
 				});
 			});
-			*/
-			
-		
+			 */
+
 			/**$('.widget-box').on('setting.ace.widget' , function(e) {
 				e.preventDefault();
 			});*/
-		
+
 			/**
 			$('.widget-box').on('show.ace.widget', function(e) {
 				//e.preventDefault();
@@ -679,36 +795,38 @@
 			$('.widget-box').on('reload.ace.widget', function(e) {
 				//this = the widget-box
 			});
-			*/
-		
+			 */
+
 			//$('#my-widget-box').widget_box('hide');
-		
-			
-		
+
 			// widget boxes
 			// widget box drag & drop example
-		    $('.widget-container-col').sortable({
-		        connectWith: '.widget-container-col',
-				items:'> .widget-box',
-				handle: ace.vars['touch'] ? '.widget-header' : false,
-				cancel: '.fullscreen',
-				opacity:0.8,
-				revert:true,
-				forceHelperSize:true,
-				placeholder: 'widget-placeholder',
-				forcePlaceholderSize:true,
-				tolerance:'pointer',
-				start: function(event, ui) {
+			$('.widget-container-col').sortable({
+				connectWith : '.widget-container-col',
+				items : '> .widget-box',
+				handle : ace.vars['touch'] ? '.widget-header' : false,
+				cancel : '.fullscreen',
+				opacity : 0.8,
+				revert : true,
+				forceHelperSize : true,
+				placeholder : 'widget-placeholder',
+				forcePlaceholderSize : true,
+				tolerance : 'pointer',
+				start : function(event, ui) {
 					//when an element is moved, it's parent becomes empty with almost zero height.
 					//we set a min-height for it to be large enough so that later we can easily drop elements back onto it
-					ui.item.parent().css({'min-height':ui.item.height()})
+					ui.item.parent().css({
+						'min-height' : ui.item.height()
+					})
 					//ui.sender.css({'min-height':ui.item.height() , 'background-color' : '#F5F5F5'})
 				},
-				update: function(event, ui) {
-					ui.item.parent({'min-height':''})
+				update : function(event, ui) {
+					ui.item.parent({
+						'min-height' : ''
+					})
 					//p.style.removeProperty('background-color');
 				}
-		    });
+			});
 
 			$(".knob").knob();
 
