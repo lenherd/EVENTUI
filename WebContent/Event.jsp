@@ -138,6 +138,52 @@
 					</div>
 
 					<div class="space-4"></div>
+					
+						<div class="form-group">
+
+
+						<label class="col-sm-3 control-label no-padding-right"
+							for="form-field-8">Job Category</label>
+						<div class="col-sm-3">
+
+
+							<div>
+
+								<select class="chosen-select">
+									<option value="Choose a Category..."></option>
+									<option value="ND">NonDream</option>
+									<option value="DR">Dream</option>
+									<option value="SD">SuperDream</option>
+
+								</select>
+							</div>
+
+
+						</div>
+
+					</div>
+					<div class="space-4"></div>
+					
+					<div class="form-group">
+
+
+						<label class="col-sm-3 control-label no-padding-right"
+							for="form-field-8">C.T.C</label>
+						<div class="col-sm-3">
+
+
+							<div>
+								<input type="text" id="spinner1" />
+								<div class="space-6"></div>
+
+
+							</div>
+
+
+						</div>
+
+					</div>
+					<div class="space-4"></div>
 
 					<div class="form-group">
 						<label class="col-sm-3 control-label no-padding-right"
@@ -228,80 +274,6 @@
 
 
 						<label class="col-sm-3 control-label no-padding-right"
-							for="form-field-8">Job Category</label>
-						<div class="col-sm-3">
-
-
-							<div>
-
-								<select class="chosen-select">
-									<option value="Choose a Category..."></option>
-									<option value="ND">NonDream</option>
-									<option value="DR">Dream</option>
-									<option value="SD">SuperDream</option>
-
-								</select>
-							</div>
-
-
-						</div>
-
-					</div>
-					<div class="space-4"></div>
-
-
-
-					<div class="form-group">
-
-
-						<label class="col-sm-3 control-label no-padding-right"
-							for="form-field-8">C.T.C</label>
-						<div class="col-sm-3">
-
-
-							<div>
-								<input type="text" id="spinner1" />
-								<div class="space-6"></div>
-
-
-							</div>
-
-
-						</div>
-
-					</div>
-					<div class="space-4"></div>
-
-
-
-					<div class="form-group">
-
-
-						<label class="col-sm-3 control-label no-padding-right"
-							for="form-field-18">Allow already Placed </label>
-						<div class="col-sm-3">
-
-
-							<div>
-								<label> <input name="switch-field-1"
-									class="ace ace-switch ace-switch-6" type="checkbox" /> <span
-									class="lbl"></span>
-								</label>
-
-
-
-							</div>
-
-
-						</div>
-
-					</div>
-					<div class="space-4"></div>
-
-					<div class="form-group">
-
-
-						<label class="col-sm-3 control-label no-padding-right"
 							for="form-field-18">No of KT's allowed </label>
 						<div class="col-sm-3">
 
@@ -364,35 +336,49 @@
 					</div>
 					<div class="space-4"></div>
 
-
-
-					<div class="form-group">
+						<div class="form-group">
 
 
 						<label class="col-sm-3 control-label no-padding-right"
-							for="form-field-13">Eligible Branches</label>
+							for="form-field-12">Event-Date</label>
 						<div class="col-sm-3">
-
-
-							<div>
-
-								<select class="chosen-select form-control"
-									multiple="Eligible Branches">
-									<option value="Choose a Branch..."></option>
-									<option value="CS">Computers</option>
-									<option value="IT">Info.Tech</option>
-									<option value="EX">Electronics</option>
-									<option value="PD">Production</option>
-
-								</select>
+							<div class="input-group input-group-sm">
+								<input type="text" id="datepicker" class="form-control" /> <span
+									class="input-group-addon"> <i
+									class="ace-icon fa fa-calendar"></i>
+								</span>
 							</div>
-
 
 						</div>
 
 					</div>
 					<div class="space-4"></div>
 
+
+					<div class="space-4"></div>
+
+					<div class="form-group">
+
+
+						<label class="col-sm-3 control-label no-padding-right"
+							for="form-field-12">Can apply from</label>
+						<div class="col-sm-3">
+
+
+
+							<input class="form-control" type="text" name="date-range-picker"
+								id="id-date-range-picker-1" />
+
+
+
+
+						</div>
+
+
+
+					</div>
+					<div class="space-4"></div>
+					
 					<div class="form-group">
 
 
@@ -446,45 +432,56 @@
 					</div>
 					<div class="space-4"></div>
 
+									
+					
+
 					<div class="form-group">
 
 
 						<label class="col-sm-3 control-label no-padding-right"
-							for="form-field-12">Event-Date</label>
+							for="form-field-13">Eligible Branches</label>
 						<div class="col-sm-3">
-							<div class="input-group input-group-sm">
-								<input type="text" id="datepicker" class="form-control" /> <span
-									class="input-group-addon"> <i
-									class="ace-icon fa fa-calendar"></i>
-								</span>
+
+
+							<div>
+
+								<select class="chosen-select form-control"
+									multiple="Eligible Branches">
+									<option value="Choose a Branch..."></option>
+									<option value="CS">Computers</option>
+									<option value="IT">Info.Tech</option>
+									<option value="EX">Electronics</option>
+									<option value="PD">Production</option>
+
+								</select>
 							</div>
+
 
 						</div>
 
 					</div>
 					<div class="space-4"></div>
 
-
-					<div class="space-4"></div>
-
-					<div class="form-group">
+											<div class="form-group">
 
 
 						<label class="col-sm-3 control-label no-padding-right"
-							for="form-field-12">Can apply from</label>
+							for="form-field-18">Allow already Placed </label>
 						<div class="col-sm-3">
 
 
+							<div>
+								<label> <input name="switch-field-1"
+									class="ace ace-switch ace-switch-6" type="checkbox" /> <span
+									class="lbl"></span>
+								</label>
 
-							<input class="form-control" type="text" name="date-range-picker"
-								id="id-date-range-picker-1" />
 
 
+							</div>
 
 
 						</div>
-
-
 
 					</div>
 					<div class="space-4"></div>
@@ -498,7 +495,7 @@
 						<!-- edited clearfix form-actions -->
 
 						<div class="col-md-offset-3 col-md-9">
-							<button class="btn btn-info" type="button">
+							<button onclick="location.href = 'ViewJob.jsp';" class="btn btn-info" type="button">
 								<i class="ace-icon fa fa-check bigger-110"></i> Submit
 							</button>
 

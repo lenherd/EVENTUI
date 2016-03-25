@@ -111,8 +111,7 @@
 		<div class="col-xs-12 col-sm-6 widget-container-col">
 
 			<div class="space-4"></div>
-						<!DOCTYPE html>
-			<html>
+			
 <script
 	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
