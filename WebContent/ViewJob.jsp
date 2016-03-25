@@ -94,19 +94,6 @@
 		</div>
 		<!-- End of sidebar responsive -->
 
-
-
-
-		<div class="page-header">
-			<h2 align="center">
-				<i class="menu-icon fa fa-pencil-square-o red"></i>This is how your form will look<small>
-					<i class="ace-icon fa fa-angle-double-right"></i> Are you sure you want to submit?
-				</small>
-
-			</h2>
-		</div>
-
-
 <div class="col-xs-12 col-sm-6 widget-container-col">
 
 			<div class="space-4"></div>
@@ -119,8 +106,7 @@
 						</a>
 					</h3>
 					<div class="widget-toolbar">
-						<a href="#" data-action="reload"> <i
-							class="ace-icon fa fa-refresh"></i>
+						
 						</a> <a href="#" data-action="collapse"> <i
 							class="ace-icon fa fa-chevron-up"></i>
 						</a> <a href="#" data-action="close"> <i
@@ -130,27 +116,218 @@
 					</div>
 				</div>
 				<div class="widget-body">
-					<div class="widget-main">
-						<p class="alert alert-info">Key Skills:</p>
-						<p class="alert alert-success">Job Description:</p>
-					</div>
+					<div class="widget-main no-padding">
+													<table class="table table-striped table-bordered table-hover">
+														<thead class="thin-border-bottom">
+															<tr>
+																<th>
+																	
+																	Category
+																</th>
 
+																<th>
+																	
+																	Requirement
+																</th>
+																<th class="hidden-480">Status</th>
+															</tr>
+														</thead>
+
+														<tbody>
+															<tr>
+																<td class="">Job</td>
+
+																<td>
+																	<span>Super-Dream</span>
+																</td>
+
+																<td class="hidden-480">
+																	<span class="label label-warning">Pending</span>
+																</td>
+															</tr>
+
+															<tr>
+																<td class="">C.T.C</td>
+
+																<td>
+																	<span>14.5 Lakhs</span >
+																</td>
+
+																<td class="hidden-480">
+																	<span class="label label-success arrowed-in arrowed-in-right">Approved</span>
+																</td>
+															</tr>
+
+															<tr>
+																<td class="">Skill Set Required</td>
+
+																<td>
+																	<span>Java, Python, AngularJS</span>
+																</td>
+
+																<td class="hidden-480">
+																	<span class="label label-warning">Pending</span>
+																</td>
+															</tr>
+
+															<tr>
+																<td class="">Documents to be carried</td>
+
+																<td>
+																	<span>Passing Certificates & Any other Certis</span>
+																</td>
+
+																<td class="hidden-480">
+																	<span class="label label-inverse arrowed">Blocked</span>
+																</td>
+															</tr>
+															
+															
+															<tr>
+																<td class="">Job description</td>
+
+																<td>
+																	<span>The job is very tidious , Only apply if u can. Tere Se nai hoga</span>
+																</td>
+
+																<td class="hidden-480">
+																	<span class="label label-inverse arrowed">Blocked</span>
+																</td>
+															</tr>
+
+															<tr>
+																<td class="">Percentage&CGPA</td>
+
+																<td>
+																	<span>65% & 7.45</span>
+																</td>
+
+																<td class="hidden-480">
+																	<span class="label label-info arrowed-in arrowed-in-right">Online</span>
+																</td>
+															</tr>
+															<tr>
+																<td class="">K.T allowed</td>
+
+																<td>
+																	<span>2</span>
+																</td>
+
+																<td class="hidden-480">
+																	<span class="label label-info arrowed-in arrowed-in-right">Online</span>
+																</td>
+															</tr>
+															
+															<tr>
+																<td class="">HSC & SSC</td>
+
+																<td>
+																	<span>65% & 85%</span>
+																</td>
+
+																<td class="hidden-480">
+																	<span class="label label-info arrowed-in arrowed-in-right">Online</span>
+																</td>
+															</tr>
+															
+															<tr>
+																<td class="">Placement Date</td>
+
+																<td>
+																	<span>27/5/2016</span>
+																</td>
+
+																<td class="hidden-480">
+																	<span class="label label-info arrowed-in arrowed-in-right">Online</span>
+																</td>
+															</tr>
+															
+															<tr>
+																<td class="">Application Date</td>
+
+																<td>
+																	<span>From today to 22/5/2016</span>
+																</td>
+
+																<td class="hidden-480">
+																	<span class="label label-info arrowed-in arrowed-in-right">Online</span>
+																</td>
+															</tr>
+															
+															<tr>
+																<td class="">Year of Passing</td>
+
+																<td>
+																	<span>2017</span>
+																</td>
+
+																<td class="hidden-480">
+																	<span class="label label-info arrowed-in arrowed-in-right">Online</span>
+																</td>
+															</tr>
+															
+															<tr>
+																<td class="">Year Gap</td>
+
+																<td>
+																	<span>Allowed</span>
+																</td>
+
+																<td class="hidden-480">
+																	<span class="label label-info arrowed-in arrowed-in-right">Online</span>
+																</td>
+															</tr>
+															
+															<tr>
+																<td class="">Eligible Branches</td>
+
+																<td>
+																	<span>Computer & IT</span>
+																</td>
+
+																<td class="hidden-480">
+																	<span class="label label-info arrowed-in arrowed-in-right">Online</span>
+																</td>
+															</tr>
+															
+															<tr>
+																<td class="">Allow Already Placed</td>
+
+																<td>
+																	<span>No</span>
+																</td>
+
+																<td class="hidden-480">
+																	<span class="label label-info arrowed-in arrowed-in-right">Online</span>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+
+</div>
 					<div class="widget-toolbox padding-8 clearfix">
+					
+						<button onclick="location.href = 'Event.jsp';" class="btn btn-xs btn-danger pull-left">
+						<i
+								class="ace-icon fa fa-arrow-left icon-on-left"></i>
+							<span class="bigger-110">Edit </span> 
+						</button>
+						
 
-						<button onclick="location.href = 'successfull.jsp';" class="btn btn-xs btn-purple pull-right">
+						<button onclick="location.href = 'successfull.jsp';" class="btn btn-xs btn-success pull-right">
 							<span class="bigger-110">Submit </span> <i
 								class="ace-icon fa fa-arrow-right icon-on-right"></i>
 						</button>
+						
+						
 					</div>
 				</div>
 				</div>
 				
 				</div>
 				
-		<div class="space"></div>
-
-
-
-		<jsp:directive.include file="Footer.jsp" />
+				
+				
 		</body>
 </html>
