@@ -96,7 +96,7 @@
 
 
 
-
+<!-- 
 		<div class="page-header">
 			<h2 align="center">
 				<i class="menu-icon fa fa-pencil-square-o red"></i>Application <small>
@@ -107,7 +107,7 @@
 		</div>
 
 
-
+ -->
 		<div class="col-xs-12 col-sm-6 widget-container-col">
 
 			<div class="space-4"></div>
@@ -120,6 +120,30 @@
 	<div ng-app="myApp" ng-controller="myCtrl">
 		<div class="timeline-item clearfix">
 
+
+<div class="row">
+<h1 style="color:blue;"><div align="center">Today</div></h1>
+			<div class="widget-box transparent">
+				<div class="widget-header widget-header-small">
+					<h5 class="widget-title smaller">
+						<a href="#" class="blue">Purple Leaf</a> <span class="grey">
+							for the non-techy</span>
+					</h5>
+
+					<span class="widget-toolbar"> <a href="#"
+						data-action="reload"> <i class="ace-icon fa fa-refresh"></i>
+					</a>
+						<button onclick="location.href = 'Job.jsp';" class="btn btn-minier btn-yellow" ng-click="myFunc3()">
+							<span>Apply</span>
+						</button>
+					</span>
+				</div>
+			</div>
+			
+
+		</div>
+			<div class="space-4"></div>
+<div class="row"><h1 style="color:blue;"><div align="center">Previous</div></h1>
 			<div class="widget-box transparent">
 				<div class="widget-header widget-header-small">
 					<h5 class="widget-title smaller">
@@ -237,62 +261,6 @@
 			
 			<div class="space-4"></div>
 
-			<div class="widget-box transparent">
-				<div class="widget-header widget-header-small">
-					<h5 class="widget-title smaller">
-						<a href="#" class="blue">Purple Leaf</a> <span class="grey">
-							for the non-techy</span>
-					</h5>
-
-					<span class="widget-toolbar"> <a href="#"
-						data-action="reload"> <i class="ace-icon fa fa-refresh"></i>
-					</a>
-						<button class="btn btn-minier btn-yellow" ng-click="myFunc3()">
-							<span>Apply</span>
-						</button>
-					</span>
-				</div>
-			</div>
-			
-		<div ng-show="showMe3">
-			<div class="widget-box widget-color-purple">
-				<div class="widget-header">
-					<h3 class="widget-title">
-						Purple Leaf <a href="#"> <img
-							src="http://wsbcc2016.com/wp-content/uploads/2016/01/Purple-Logo.png"
-							alt="Smiley face" height="42" width="42"></i>
-						</a>
-					</h3>
-					<div class="widget-toolbar">
-						<a href="#" data-action="reload"> <i
-							class="ace-icon fa fa-refresh"></i>
-						</a> <a href="#" data-action="collapse"> <i
-							class="ace-icon fa fa-chevron-up"></i>
-						</a> <a href="#" data-action="close"> <i
-							class="ace-icon fa fa-times"></i>
-						</a>
-
-					</div>
-				</div>
-				<div class="widget-body">
-					<div class="widget-main">
-						<p class="alert alert-info">Key Skills:</p>
-						<p class="alert alert-success">Job Description:</p>
-					</div>
-
-					<div class="widget-toolbox padding-8 clearfix">
-
-						<button class="btn btn-xs btn-purple pull-right">
-							<span class="bigger-110">Apply</span> <i
-								class="ace-icon fa fa-arrow-right icon-on-right"></i>
-						</button>
-					</div>
-				</div>
-			</div>
-
-
-		</div>
-			<div class="space-4"></div>
 			<div class="widget-box transparent">
 				<div class="widget-header widget-header-small">
 					<h5 class="widget-title smaller">
@@ -514,6 +482,7 @@
 		
 
 
+		</div>
 		</div>
 
 
