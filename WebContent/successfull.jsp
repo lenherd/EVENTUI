@@ -103,7 +103,7 @@
 						<div class="widget-main padding-24">
 							<div class="row align-center">
 							<h1 style="color:green;"><div>Congratulations!</div></h1>
-										<a href="tpc.jsp">
+										<a href="teacher.jsp">
 										<img src="http://cliparts.co/cliparts/8ix/noy/8ixnoyj8T.png" alt="Success Icon" style="width:256px;height:256px;">
 										</a>
 										<h1 style="color:green;"><div>Successful</div></h1>

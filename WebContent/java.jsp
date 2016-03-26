@@ -1,80 +1,906 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>Dashboard - Ace Admin</title>
 
-$.fn.inlineEdit = function(replaceWith, connectWith) {
+<meta name="description" content="overview &amp; stats" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-    $(this).click(function() {
+<!-- bootstrap & fontawesome -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="assets/font-awesome/4.2.0/css/font-awesome.min.css" />
 
-        var elem = $(this);
 
-        elem.hide();
-        elem.after(replaceWith);
-        replaceWith.focus();
+<!-- page specific plugin styles -->
 
-        replaceWith.blur(function() {
+<!-- text fonts -->
+<link rel="stylesheet" href="assets/fonts/fonts.googleapis.com.css" />
 
-            if ($(this).val() != "") {
-                connectWith.val($(this).val()).change();
-                elem.text($(this).val());
-            }
+<!-- ace styles -->
+<link rel="stylesheet" href="assets/css/ace.min.css"
+	class="ace-main-stylesheet" id="main-ace-style" />
 
-            $(this).remove();
-            elem.show();
-        });
-    });
-};
-</script>
+
+
+
+
+<!-- inline styles related to this page -->
+
+<!-- ace settings handler -->
+<script src="assets/js/ace-extra.min.js"></script>
+
+<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
 
 </head>
 <body>
-<div>
+	<jsp:directive.include file="Header.jsp" />
 
-<form>
-    <input type="hidden" name="hiddenField" />
-</form>
-<div class="fa  fa-pencil-square"><p>Please edit me... 1</p></div>
+	<div class="main-container" id="main-container">
+		<script type="text/javascript">
+			try {
+				ace.settings.check('main-container', 'fixed')
+			} catch (e) {
+			}
+		</script>
+
+		<div id="sidebar" class="sidebar responsive">
+			<script type="text/javascript">
+				try {
+					ace.settings.check('sidebar', 'fixed')
+				} catch (e) {
+				}
+			</script>
 
 
+
+
+			<ul class="nav nav-list">
+				<li class=" "><a href="index.jsp"> <i
+						class="menu-icon fa fa-tachometer"></i> <span class="menu-text">
+							Dashboard </span>
+				</a> <b class="arrow"></b></li>
+
+				<li class=" "><a href="Login.jsp"> <i
+						class="menu-icon fa fa-sign-in"></i> <span class="menu-text">
+							Login </span>
+				</a> <b class="arrow"></b></li>
+
+				<li class=" "><a href="Upload.jsp"> <i
+						class="menu-icon fa fa-cloud-upload"></i> <span class="menu-text">
+							Upload </span>
+				</a> <b class="arrow"></b></li>
+
+				<li class="active"><a href="Event.jsp"> <i
+						class="menu-icon fa fa-book"></i> <span class="menu-text">
+							Event </span>
+				</a> <b class="arrow"></b></li>
+			</ul>
+			<!--  End of nav list-->
+
+
+			<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+				<i class="ace-icon fa fa-angle-double-left"
+					data-icon1="ace-icon fa fa-angle-double-left"
+					data-icon2="ace-icon fa fa-angle-double-right"></i>
+			</div>
+
+			<script type="text/javascript">
+				try {
+					ace.settings.check('sidebar', 'collapsed')
+				} catch (e) {
+				}
+			</script>
+		</div>
+		<!-- End of sidebar responsive -->
+		
+		
+					<div class="page-content">
+						
+
+						<div class="page-header">
+							<h1>
+								User Profile Page
+								<small>
+									<i class="ace-icon fa fa-angle-double-right"></i>
+									3 styles with inline editable feature
+								</small>
+							</h1>
+						</div><!-- /.page-header -->
+
+						<div class="row">
+			<div class="col-sm-5 col-sm-offset-2">
+								<!-- PAGE CONTENT BEGINS -->
+
+							<div class="show">
+									<div id="user-profile-2" class="user-profile">
+										<div class="tabbable">
+											<ul class="nav nav-tabs padding-18">
+												<li class="active">
+													<a data-toggle="tab" href="#home">
+														<i class="green ace-icon fa fa-user bigger-120"></i>
+														Profile
+													</a>
+												</li>
+
+												<li>
+													<a data-toggle="tab" href="#feed">
+														<i class="orange ace-icon fa fa-rss bigger-120"></i>
+														Manage jobs for students
+													</a>
+												</li>
+
+												<li>
+													<a data-toggle="tab" href="#friends">
+														<i class="blue ace-icon fa fa-users bigger-120"></i>
+														Placement Details..
+													</a>
+												</li>
+<!-- 
+												<li>
+													<a data-toggle="tab" href="#pictures">
+														<i class="pink ace-icon fa fa-picture-o bigger-120"></i>
+														Pictures
+													</a>
+												</li> -->
+											</ul>
+
+											<div class="tab-content no-border padding-24">
+												<div id="home" class="tab-pane in active">
+													<div class="row">
+														<div class="col-xs-12 col-sm-3 center">
+															<span class="profile-picture">
+																<img class="editable img-responsive" alt="Alex's Avatar" id="avatar2" src="assets/avatars/profile-pic.jpg" />
+															</span>
+
+															<div class="space space-4"></div>
+
+															<a href="#" class="btn btn-sm btn-block btn-primary">
+																<i class="ace-icon fa fa-envelope-o bigger-110"></i>
+																<span class="bigger-110">Send a message</span>
+															</a>
+														</div><!-- /.col -->
+
+														<div class="col-xs-12 col-sm-9">
+															<h4 class="blue">
+																<span class="middle">Alex M. Doe</span>
+
+																<span class="label label-purple arrowed-in-right">
+																	<i class="ace-icon fa fa-circle smaller-80 align-middle"></i>
+																	online
+																</span>
+															</h4>
+
+															<div class="profile-user-info">
+																<div class="profile-info-row">
+																	<div class="profile-info-name"> Username </div>
+
+																	<div class="profile-info-value">
+																		<span>alexdoe</span>
+																	</div>
+																</div>
+
+																<div class="profile-info-row">
+																	<div class="profile-info-name"> Location </div>
+
+																	<div class="profile-info-value">
+																		<i class="fa fa-map-marker light-orange bigger-110"></i>
+																		<span>Netherlands</span>
+																		<span>Amsterdam</span>
+																	</div>
+																</div>
+
+																<div class="profile-info-row">
+																	<div class="profile-info-name"> Age </div>
+
+																	<div class="profile-info-value">
+																		<span>38</span>
+																	</div>
+																</div>
+
+																<div class="profile-info-row">
+																	<div class="profile-info-name"> Joined </div>
+
+																	<div class="profile-info-value">
+																		<span>2010/06/20</span>
+																	</div>
+																</div>
+
+																<div class="profile-info-row">
+																	<div class="profile-info-name"> Last Online </div>
+
+																	<div class="profile-info-value">
+																		<span>3 hours ago</span>
+																	</div>
+																</div>
+															</div>
+
+															<div class="hr hr-8 dotted"></div>
+
+															<div class="profile-user-info">
+																<div class="profile-info-row">
+																	<div class="profile-info-name"> Website </div>
+
+																	<div class="profile-info-value">
+																		<a href="#" target="_blank">www.alexdoe.com</a>
+																	</div>
+																</div>
+
+																<div class="profile-info-row">
+																	<div class="profile-info-name">
+																		<i class="middle ace-icon fa fa-facebook-square bigger-150 blue"></i>
+																	</div>
+
+																	<div class="profile-info-value">
+																		<a href="#">Find me on Facebook</a>
+																	</div>
+																</div>
+
+																<div class="profile-info-row">
+																	<div class="profile-info-name">
+																		<i class="middle ace-icon fa fa-twitter-square bigger-150 light-blue"></i>
+																	</div>
+
+																	<div class="profile-info-value">
+																		<a href="#">Follow me on Twitter</a>
+																	</div>
+																</div>
+															</div>
+														</div><!-- /.col -->
+													</div><!-- /.row -->
+
+													<div class="space-20"></div>
+
+													
+												</div><!-- /#home -->
+
+												<div id="feed" class="tab-pane">
+													<div class="row">
+														<div class="col-xs-12 col-sm-8">
+															<div class="widget-box">
+																<div class="widget-body">
+																 <div class="widget-main">	
+																	
+																		<div class="form-group">
+																			<div>
+																				<label class="col-sm-3 control-label no-padding-left" for="form-field-1"> Job Profile </label>
+																				<div class="col-sm-9">
+																					<input type="text" id="form-field-1" placeholder=" Name of Job Profile" class="col-xs-10 col-sm-8" />
+																				</div><br>
+																				<label for="form-field-11">About Job</label>
+																					<textarea id="form-field-11" placeholder="Add remarks on Selected Job profile" class="autosize-transition form-control"></textarea>
+																				<br>
+																				<label class="control-label col-xs-12 col-sm-3 no-padding-left" for="message">Send to :</label>
+																				<div class="col-xs-12 col-sm-9">
+																					<select id="message" class="multiselect" multiple="">
+																						<option value="cheese">Student</option>
+																						<option value="tomatoes">Student TPC</option>
+																						<option value="mozarella">TPO</option>
+																					</select>
+																				</div>
+																				<br><br><br>
+																				
+																				<div class="form-group">
+																					<div class="col-xs-12">
+																						<input multiple="" type="file" id="id-input-file-3" />
+																					</div>
+																				</div>
+
+																				<br><br><br>
+																				<button class="btn btn-info" type="button">
+																					<i class="ace-icon fa fa-check bigger-110"></i>
+																					SEND
+																				</button>
+
+																				&nbsp; &nbsp; &nbsp;
+																				<button class="btn" type="reset">
+																					<i class="ace-icon fa fa-undo bigger-110"></i>
+																					Reset
+																				</button>
+																				
+																			</div>
+																	   
+																	   </div>
+
+																		
+																		
+																	</div>
+																	
+																</div>
+															</div>
+														</div><!-- /.span -->
+													
+														<div class="col-xs-12 col-sm-4">
+																<br>
+																<a href="#"  class="btn btn-primary btn-md">View Counseling Reports.</a>
+																	<br><br>
+																<a href="#" class="btn btn-warning btn-md">View Offer Letters.</a>
+																	<br><br>
+																	<div class="col-xs-12">
+																		<input type="file" id="id-input-file-2" />
+																	<a href="#"  class="btn btn-info btn-sm">Upload</a>
+																	</div>
+																
+													</div>
+													</div>
+
+
+													<div class="space-12"></div>
+
+													</div><!-- /#feed -->
+
+												<div id="friends" class="tab-pane">
+													
+												
+													
+															<!-- PAGE CONTENT BEGINS -->
+															
+															<br>
+															<a href="#" id="id-btn-dialog1" class="btn btn-purple btn-md">View Placement Performance</a>
+															<div id="dialog-message" class="hide">
+																		<p>
+																			<b>CREDIT SUISSE Interviews </b>
+																		</p>
+																		<p> Applied Students : <a href="#">97</a></p>
+																		<p>Shortlisted Candidates : 55</p>
+																		
+																		<div class="hr hr-12 hr-double"></div>
+																	</div><!-- #dialog-message -->
+															
+															<div class="row">
+																<div class="col-sm-9">
+																	<div class="space"></div>
+
+																	<div id="calendar"></div>
+																</div>
+																<div class="col-sm-3">
+																		<div class="widget-box transparent">
+																			<div class="widget-header">
+																				<h4>Draggable events</h4>
+																			</div>
+
+																			<div class="widget-body">
+																				<div class="widget-main no-padding">
+																					<div id="external-events">
+																						<div class="external-event label-grey" data-class="label-grey">
+																							<i class="ace-icon fa fa-arrows"></i>
+																							My Event 1
+																						</div>
+
+																						<div class="external-event label-success" data-class="label-success">
+																							<i class="ace-icon fa fa-arrows"></i>
+																							My Event 2
+																						</div>
+
+																						<div class="external-event label-danger" data-class="label-danger">
+																							<i class="ace-icon fa fa-arrows"></i>
+																							My Event 3
+																						</div>
+
+																						<div class="external-event label-purple" data-class="label-purple">
+																							<i class="ace-icon fa fa-arrows"></i>
+																							My Event 4
+																						</div>
+
+																						<div class="external-event label-yellow" data-class="label-yellow">
+																							<i class="ace-icon fa fa-arrows"></i>
+																							My Event 5
+																						</div>
+
+																						<div class="external-event label-pink" data-class="label-pink">
+																							<i class="ace-icon fa fa-arrows"></i>
+																							My Event 6
+																						</div>
+
+																						<div class="external-event label-info" data-class="label-info">
+																							<i class="ace-icon fa fa-arrows"></i>
+																							My Event 7
+																						</div>
+
+																						<label>
+																							<input type="checkbox" class="ace ace-checkbox" id="drop-remove" />
+																							<span class="lbl"> Remove after drop</span>
+																						</label>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																</div>
+								
+															</div>
+
+															<!-- PAGE CONTENT ENDS -->
+														
+
+												</div><!-- /#friends -->
+
+
+							
+											</div><!-- /#pictures -->
+											</div>
+										</div>
+									</div>
+								</div>
+
+						
+								<!-- PAGE CONTENT ENDS -->
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.page-content -->
+				</div>
+			</div><!-- /.main-content -->
+
+			<div class="footer">
+				<div class="footer-inner">
+					<div class="footer-content">
+						<span class="bigger-120">
+							<span class="blue bolder">Ace</span>
+							Application &copy; 2013-2014
+						</span>
+
+						&nbsp; &nbsp;
+						<span class="action-buttons">
+							<a href="#">
+								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+							</a>
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script src="assets/js/jquery.2.1.1.min.js"></script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="assets/js/jquery.1.11.1.min.js"></script>
+<![endif]-->
+
+		<!--[if !IE]> -->
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
 <script type="text/javascript">
-var replaceWith = $('<input name="temp" type="text" />'),
-    connectWith = $('input[name="hiddenField"]');
-
-$('p').inlineEdit(replaceWith, connectWith);
-
+ window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
 </script>
+<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="assets/js/bootstrap.min.js"></script>
+
+		<!-- page specific plugin scripts -->
+
+		<!--[if lte IE 8]>
+		  <script src="assets/js/excanvas.min.js"></script>
+		<![endif]-->
+		<script src="assets/js/jquery-ui.custom.min.js"></script>
+		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="assets/js/jquery.gritter.min.js"></script>
+		<script src="assets/js/moment.min.js"></script>
+		<script src="assets/js/fullcalendar.min.js"></script>
+		<script src="assets/js/bootbox.min.js"></script>
+		<script src="assets/js/jquery.easypiechart.min.js"></script>
+		<script src="assets/js/bootstrap-datepicker.min.js"></script>
+		<script src="assets/js/jquery.hotkeys.min.js"></script>
+		<script src="assets/js/bootstrap-wysiwyg.min.js"></script>
+		<script src="assets/js/select2.min.js"></script>
+		<script src="assets/js/fuelux.spinner.min.js"></script>
+		<script src="assets/js/bootstrap-editable.min.js"></script>
+		<script src="assets/js/ace-editable.min.js"></script>
+		<script src="assets/js/jquery.maskedinput.min.js"></script>
+		<script src="assets/js/jquery.autosize.min.js"></script>
+		<script src="assets/js/bootstrap-multiselect.min.js"></script>
+		<script src="assets/js/jquery-ui.min.js"></script>
+		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+
+		<!-- page specific plugin scripts -->
+		
+		
+		<!-- ace scripts -->
+		<script src="assets/js/ace-elements.min.js"></script>
+		<script src="assets/js/ace.min.js"></script>
+
+		<!-- inline scripts related to this page -->
+		<script type="text/javascript">
+			jQuery(function($) {
+
+/* initialize the external events
+	-----------------------------------------------------------------*/
+
+	$('#external-events div.external-event').each(function() {
+
+		// create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+		// it doesn't need to have a start or end
+		var eventObject = {
+			title: $.trim($(this).text()) // use the element's text as the event title
+		};
+
+		// store the Event Object in the DOM element so we can get to it later
+		$(this).data('eventObject', eventObject);
+
+		// make the event draggable using jQuery UI
+		$(this).draggable({
+			zIndex: 999,
+			revert: true,      // will cause the event to go back to its
+			revertDuration: 0  //  original position after the drag
+		});
+		
+	});
+	
+	/*** FOR DRAG AND DROP functionality *********************/
+	$('#id-input-file-3').ace_file_input({
+					style:'well',
+					btn_choose:'Drop Reference material if any or click to choose',
+					btn_change:null,
+					no_icon:'ace-icon fa fa-cloud-upload',
+					droppable:true,
+					thumbnail:'small'//large | fit
+					//,icon_remove:null//set null, to hide remove/reset button
+					/**,before_change:function(files, dropped) {
+						//Check an example below
+						//or examples/file-upload.html
+						return true;
+					}*/
+					/**,before_remove : function() {
+						return true;
+					}*/
+					,
+					preview_error : function(filename, error_code) {
+						//name of the file that failed
+						//error_code values
+						//1 = 'FILE_LOAD_FAILED',
+						//2 = 'IMAGE_LOAD_FAILED',
+						//3 = 'THUMBNAIL_FAILED'
+						//alert(error_code);
+					}
+			
+				}).on('change', function(){
+					//console.log($(this).data('ace_input_files'));
+					//console.log($(this).data('ace_input_method'));
+				});
 
 
-</div>
-<form>
-    <input type="hidden" name="hiddenField" />
-</form>
-<div class="fa  fa-pencil-square"><p>Please edit me... 1</p></div>
+/**  for increasing the size of text area automatically************/
+		$('textarea[class*=autosize]').autosize({append: "\n"});
+
+/*  use for Multiselecting the inputs*/
+		$('.multiselect').multiselect({
+						 enableFiltering: true,
+						 buttonClass: 'btn btn-white btn-primary',
+						 templates: {
+							button: '<button type="button" class="multiselect dropdown-toggle" data-toggle="dropdown"></button>',
+							ul: '<ul class="multiselect-container dropdown-menu"></ul>',
+							filter: '<li class="multiselect-item filter"><div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span><input class="form-control multiselect-search" type="text"></div></li>',
+							filterClearBtn: '<span class="input-group-btn"><button class="btn btn-default btn-white btn-grey multiselect-clear-filter" type="button"><i class="fa fa-times-circle red2"></i></button></span>',
+							li: '<li><a href="javascript:void(0);"><label></label></a></li>',
+							divider: '<li class="multiselect-item divider"></li>',
+							liGroup: '<li class="multiselect-item group"><label class="multiselect-group"></label></li>'
+						 }
+							});
+
+		
+	/* initialize the calendar
+	-----------------------------------------------------------------*/
+
+	var date = new Date();
+	var d = date.getDate();
+	var m = date.getMonth();
+	var y = date.getFullYear();
 
 
-<script type="text/javascript">
-var replaceWith = $('<input name="temp" type="text" />'),
-    connectWith = $('input[name="hiddenField"]');
+	var calendar = $('#calendar').fullCalendar({
+		//isRTL: true,
+		 buttonHtml: {
+			prev: '<i class="ace-icon fa fa-chevron-left"></i>',
+			next: '<i class="ace-icon fa fa-chevron-right"></i>'
+		},
+	
+		header: {
+			left: 'prev,next today',
+			center: 'title',
+			right: 'month,agendaWeek,agendaDay'
+		},
+		events: [
+		  {
+			title: 'All Day Event',
+			start: new Date(y, m, 1),
+			className: 'label-important'
+		  },
+		  {
+			title: 'Long Event',
+			start: moment().subtract(5, 'days').format('YYYY-MM-DD'),
+			end: moment().subtract(1, 'days').format('YYYY-MM-DD'),
+			className: 'label-success'
+		  },
+		  {
+			title: 'Some Event',
+			start: new Date(y, m, d-3, 16, 0),
+			allDay: false,
+			className: 'label-info'
+		  }
+		]
+		,
+		editable: true,
+		droppable: true, // this allows things to be dropped onto the calendar !!!
+		drop: function(date, allDay) { // this function is called when something is dropped
+		
+			// retrieve the dropped element's stored Event Object
+			var originalEventObject = $(this).data('eventObject');
+			var $extraEventClass = $(this).attr('data-class');
+			
+			
+			// we need to copy it, so that multiple events don't have a reference to the same object
+			var copiedEventObject = $.extend({}, originalEventObject);
+			
+			// assign it the date that was reported
+			copiedEventObject.start = date;
+			copiedEventObject.allDay = allDay;
+			if($extraEventClass) copiedEventObject['className'] = [$extraEventClass];
+			
+			// render the event on the calendar
+			// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+			$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+			
+			// is the "remove after drop" checkbox checked?
+			if ($('#drop-remove').is(':checked')) {
+				// if so, remove the element from the "Draggable Events" list
+				$(this).remove();
+			}
+			
+		}
+		,
+		selectable: true,
+		selectHelper: true,
+		select: function(start, end, allDay) {
+			
+			bootbox.prompt("New Event Title:", function(title) {
+				if (title !== null) {
+					calendar.fullCalendar('renderEvent',
+						{
+							title: title,
+							start: start,
+							end: end,
+							allDay: allDay,
+							className: 'label-info'
+						},
+						true // make the event "stick"
+					);
+				}
+			});
+			
 
-$('p').inlineEdit(replaceWith, connectWith);
+			calendar.fullCalendar('unselect');
+		}
+		,
+		eventClick: function(calEvent, jsEvent, view) {
 
-</script>
-<div>
-<form>
-    <input type="hidden" name="hiddenField1" />
-</form>
-<div class="fa  fa-pencil-square"><p>Please edit me... 2</p></div>
+			//display a modal
+			var modal = 
+			'<div class="modal fade">\
+			  <div class="modal-dialog">\
+			   <div class="modal-content">\
+				 <div class="modal-body">\
+				   <button type="button" class="close" data-dismiss="modal" style="margin-top:-10px;">&times;</button>\
+				   <form class="no-margin">\
+					  <label>Change event name &nbsp;</label>\
+					  <input class="middle" autocomplete="off" type="text" value="' + calEvent.title + '" />\
+					 <button type="submit" class="btn btn-sm btn-success"><i class="ace-icon fa fa-check"></i> Save</button>\
+				   </form>\
+				 </div>\
+				 <div class="modal-footer">\
+					<button type="button" class="btn btn-sm btn-danger" data-action="delete"><i class="ace-icon fa fa-trash-o"></i> Delete Event</button>\
+					<button type="button" class="btn btn-sm" data-dismiss="modal"><i class="ace-icon fa fa-times"></i> Cancel</button>\
+				 </div>\
+			  </div>\
+			 </div>\
+			</div>';
+		
+		
+			var modal = $(modal).appendTo('body');
+			modal.find('form').on('submit', function(ev){
+				ev.preventDefault();
+
+				calEvent.title = $(this).find("input[type=text]").val();
+				calendar.fullCalendar('updateEvent', calEvent);
+				modal.modal("hide");
+			});
+			modal.find('button[data-action=delete]').on('click', function() {
+				calendar.fullCalendar('removeEvents' , function(ev){
+					return (ev._id == calEvent._id);
+				})
+				modal.modal("hide");
+			});
+			
+			modal.modal('show').on('hidden', function(){
+				modal.remove();
+			});
 
 
-<script type="text/javascript">
-var replaceWith1 = $('<input name="temp" type="text" />'),
-    connectWith1 = $('input[name="hiddenField1"]');
+			//console.log(calEvent.id);
+			//console.log(jsEvent);
+			//console.log(view);
+
+			// change the border color just for fun
+			//$(this).css('border-color', 'red');
+
+		}
+		
+	});
 
 
-$('p').inlineEdit(replaceWith1, connectWith1);
-</script>
-</div>
-</body>
-</html>
+})
+		</script>
+	
+	
+	<!--script for changing the profile image and model for buttons -->
+	<script>
+		
+		$('#id-input-file-1 , #id-input-file-2').ace_file_input({
+					no_file:'Upload Correspondance file ...',
+					btn_choose:'Choose',
+					btn_change:'Change',
+					droppable:false,
+					onchange:null,
+					thumbnail:false //| true | large
+					//whitelist:'gif|png|jpg|jpeg'
+					//blacklist:'exe|php'
+					//onchange:''
+					//
+				});
+
+		
+		//override dialog's title function to allow for HTML titles
+				$.widget("ui.dialog", $.extend({}, $.ui.dialog.prototype, {
+					_title: function(title) {
+						var $title = this.options.title || '&nbsp;'
+						if( ("title_html" in this.options) && this.options.title_html == true )
+							title.html($title);
+						else title.text($title);
+					}
+				}));
+
+				$( "#id-btn-dialog1" ).on('click', function(e) {
+							e.preventDefault();
+					
+							var dialog = $( "#dialog-message" ).removeClass('hide').dialog({
+								modal: true,
+								title: "<div class='widget-header widget-header-large'><h4 class='smaller'><i class='ace-icon fa fa-check'></i> Details of Candidates applied for Placement.</h4></div>",
+								title_html: true,
+								buttons: [ 
+									{
+										text: "Cancel",
+										"class" : "btn btn-minier",
+										click: function() {
+											$( this ).dialog( "close" ); 
+										} 
+									},
+									{
+										text: "OK",
+										"class" : "btn btn-primary btn-minier",
+										click: function() {
+											$( this ).dialog( "close" ); 
+										} 
+									}
+								]
+							});
+					
+							/**
+							dialog.data( "uiDialog" )._title = function(title) {
+								title.html( this.options.title );
+							};
+							**/
+						});
+
+		
+		//another option is using modals
+				$('#avatar2').on('click', function(){
+					var modal = 
+					'<div class="modal fade">\
+					  <div class="modal-dialog">\
+					   <div class="modal-content">\
+						<div class="modal-header">\
+							<button type="button" class="close" data-dismiss="modal">&times;</button>\
+							<h4 class="blue">Change Avatar</h4>\
+						</div>\
+						\
+						<form class="no-margin">\
+						 <div class="modal-body">\
+							<div class="space-4"></div>\
+							<div style="width:75%;margin-left:12%;"><input type="file" name="file-input" /></div>\
+						 </div>\
+						\
+						 <div class="modal-footer center">\
+							<button type="submit" class="btn btn-sm btn-success"><i class="ace-icon fa fa-check"></i> Submit</button>\
+							<button type="button" class="btn btn-sm" data-dismiss="modal"><i class="ace-icon fa fa-times"></i> Cancel</button>\
+						 </div>\
+						</form>\
+					  </div>\
+					 </div>\
+					</div>';
+					
+					
+					var modal = $(modal);
+					modal.modal("show").on("hidden", function(){
+						modal.remove();
+					});
+			
+					var working = false;
+			
+					var form = modal.find('form:eq(0)');
+					var file = form.find('input[type=file]').eq(0);
+					file.ace_file_input({
+						style:'well',
+						btn_choose:'Click to choose new avatar',
+						btn_change:null,
+						no_icon:'ace-icon fa fa-picture-o',
+						thumbnail:'small',
+						before_remove: function() {
+							//don't remove/reset files while being uploaded
+							return !working;
+						},
+						allowExt: ['jpg', 'jpeg', 'png', 'gif'],
+						allowMime: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
+					});
+			
+					form.on('submit', function(){
+						if(!file.data('ace_input_files')) return false;
+						
+						file.ace_file_input('disable');
+						form.find('button').attr('disabled', 'disabled');
+						form.find('.modal-body').append("<div class='center'><i class='ace-icon fa fa-spinner fa-spin bigger-150 orange'></i></div>");
+						
+						var deferred = new $.Deferred;
+						working = true;
+						deferred.done(function() {
+							form.find('button').removeAttr('disabled');
+							form.find('input[type=file]').ace_file_input('enable');
+							form.find('.modal-body > :last-child').remove();
+							
+							modal.modal("hide");
+			
+							var thumb = file.next().find('img').data('thumb');
+							if(thumb) $('#avatar2').get(0).src = thumb;
+			
+							working = false;
+						});
+						
+						
+						setTimeout(function(){
+							deferred.resolve();
+						} , parseInt(Math.random() * 800 + 800));
+			
+						return false;
+					});
+					
+			});
+	</script>
+		</body></html>
+
+

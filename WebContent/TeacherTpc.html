@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>Student Home</title>
+		<title>Faculty TPC | Home</title>
 
 		<meta name="description" content="3 styles with inline editable feature" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -18,8 +18,11 @@
 		<link rel="stylesheet" href="assets/css/select2.min.css" />
 		<link rel="stylesheet" href="assets/css/datepicker.min.css" />
 		<link rel="stylesheet" href="assets/css/bootstrap-editable.min.css" />
+		<link rel="stylesheet" href="assets/css/bootstrap-multiselect.min.css" />
+		<link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
 
-		<!-- page specific plugin styles -->
+
+		<!-- page specific plugin for calander styles -->
 		<link rel="stylesheet" href="assets/css/jquery-ui.custom.min.css" />
 		<link rel="stylesheet" href="assets/css/fullcalendar.min.css" />
 		<!-- text fonts -->
@@ -47,34 +50,6 @@
 		<script src="assets/js/html5shiv.min.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
-		
-		<!-- Javascript Jquery eDIT PART -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script>
-
-$.fn.inlineEdit = function(replaceWith, connectWith) {
-
-    $(this).click(function() {
-
-        var elem = $(this);
-
-        elem.hide();
-        elem.after(replaceWith);
-        replaceWith.focus();
-
-        replaceWith.blur(function() {
-
-            if ($(this).val() != "") {
-                connectWith.val($(this).val()).change();
-                elem.text($(this).val());
-            }
-
-            $(this).remove();
-            elem.show();
-        });
-    });
-};
-</script>	
 	</head>
 
 	<body class="no-skin">
@@ -943,7 +918,7 @@ $.fn.inlineEdit = function(replaceWith, connectWith) {
 						<div class="nav-search" id="nav-search">
 							<form class="form-search">
 								<span class="input-icon">
-									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="on" />
 									<i class="ace-icon fa fa-search nav-search-icon"></i>
 								</span>
 							</form>
@@ -951,72 +926,7 @@ $.fn.inlineEdit = function(replaceWith, connectWith) {
 					</div>
 
 					<div class="page-content">
-						<div class="ace-settings-container" id="ace-settings-container">
-							<div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
-								<i class="ace-icon fa fa-cog bigger-130"></i>
-							</div>
-
-							<div class="ace-settings-box clearfix" id="ace-settings-box">
-								<div class="pull-left width-50">
-									<div class="ace-settings-item">
-										<div class="pull-left">
-											<select id="skin-colorpicker" class="hide">
-												<option data-skin="no-skin" value="#438EB9">#438EB9</option>
-												<option data-skin="skin-1" value="#222A2D">#222A2D</option>
-												<option data-skin="skin-2" value="#C6487E">#C6487E</option>
-												<option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
-											</select>
-										</div>
-										<span>&nbsp; Choose Skin</span>
-									</div>
-
-									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
-										<label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
-									</div>
-
-									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
-										<label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
-									</div>
-
-									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
-										<label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
-									</div>
-
-									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
-										<label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
-									</div>
-
-									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
-										<label class="lbl" for="ace-settings-add-container">
-											Inside
-											<b>.container</b>
-										</label>
-									</div>
-								</div><!-- /.pull-left -->
-
-								<div class="pull-left width-50">
-									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" />
-										<label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
-									</div>
-
-									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" />
-										<label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
-									</div>
-
-									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" />
-										<label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
-									</div>
-								</div><!-- /.pull-left -->
-							</div><!-- /.ace-settings-box -->
-						</div><!-- /.ace-settings-container -->
+						
 
 						<div class="page-header">
 							<h1>
@@ -1084,14 +994,14 @@ $.fn.inlineEdit = function(replaceWith, connectWith) {
 												<li>
 													<a data-toggle="tab" href="#feed">
 														<i class="orange ace-icon fa fa-rss bigger-120"></i>
-														All Uploads
+														Manage jobs for students
 													</a>
 												</li>
 
 												<li>
 													<a data-toggle="tab" href="#friends">
 														<i class="blue ace-icon fa fa-users bigger-120"></i>
-														Job Updates
+														Placement Details..
 													</a>
 												</li>
 <!-- 
@@ -1113,11 +1023,6 @@ $.fn.inlineEdit = function(replaceWith, connectWith) {
 
 															<div class="space space-4"></div>
 
-															<a href="#" class="btn btn-sm btn-block btn-success">
-																<i class="ace-icon fa fa-plus-circle bigger-120"></i>
-																<span class="bigger-110">Add as a friend</span>
-															</a>
-
 															<a href="#" class="btn btn-sm btn-block btn-primary">
 																<i class="ace-icon fa fa-envelope-o bigger-110"></i>
 																<span class="bigger-110">Send a message</span>
@@ -1125,94 +1030,40 @@ $.fn.inlineEdit = function(replaceWith, connectWith) {
 														</div><!-- /.col -->
 
 														<div class="col-xs-12 col-sm-9">
-														<div >
 															<h4 class="blue">
-																
+																<span class="middle">Alex M. Doe</span>
 
-																<form>
-    															<input type="hidden" name="hiddenField" />
-																</form>
-																
-
-																
-																<span class="middle"><p>Alex M. Doe<span class="fa  fa-pencil-square"></span></p></span>
-
-																<script type="text/javascript">
-																var replaceWith = $('<input name="temp" type="text" />'),
-															    connectWith = $('input[name="hiddenField"]');
-
-																$('p').inlineEdit(replaceWith, connectWith);
-																</script>
-
+																<span class="label label-purple arrowed-in-right">
+																	<i class="ace-icon fa fa-circle smaller-80 align-middle"></i>
+																	online
+																</span>
 															</h4>
-															</div>
 
 															<div class="profile-user-info">
 																<div class="profile-info-row">
 																	<div class="profile-info-name"> Username </div>
 
 																	<div class="profile-info-value">
-																		
-
-																<form>
-    															<input type="hidden" name="hiddenField" />
-																</form>
-
-																<span><p>Alex M. Doe</p></span>
-
-																
-
-																<script type="text/javascript">
-																var replaceWith = $('<input name="temp" type="text" />'),
-															    connectWith = $('input[name="hiddenField"]');
-
-																$('p').inlineEdit(replaceWith, connectWith);
-																</script>
-
+																		<span>alexdoe</span>
 																	</div>
 																</div>
 
 																<div class="profile-info-row">
 																	<div class="profile-info-name"> Location </div>
 
-																		<div class="profile-info-value">
-																		
-
-																<form>
-    															<input type="hidden" name="hiddenField" />
-																</form>
-
-																<span><p>Mahatma marg, Kolhapur</p></span>
-
-																
-
-																<script type="text/javascript">
-																var replaceWith = $('<input name="temp" type="text" />'),
-															    connectWith = $('input[name="hiddenField"]');
-
-																$('p').inlineEdit(replaceWith, connectWith);
-																</script>
-
+																	<div class="profile-info-value">
+																		<i class="fa fa-map-marker light-orange bigger-110"></i>
+																		<span>Netherlands</span>
+																		<span>Amsterdam</span>
 																	</div>
 																</div>
 
 																<div class="profile-info-row">
 																	<div class="profile-info-name"> Age </div>
-																	<div class="profile-info-value">
-																	<form>
-    															<input type="hidden" name="hiddenField" />
-																</form>
-																
-																		<span><p>38</p></span>
-																	
-																<script type="text/javascript">
-																var replaceWith = $('<input name="temp" type="text" />'),
-															    connectWith = $('input[name="hiddenField"]');
 
-																$('p').inlineEdit(replaceWith, connectWith);
-																</script>
+																	<div class="profile-info-value">
+																		<span>38</span>
 																	</div>
-															
 																</div>
 
 																<div class="profile-info-row">
@@ -1268,135 +1119,79 @@ $.fn.inlineEdit = function(replaceWith, connectWith) {
 
 													<div class="space-20"></div>
 
-													<div class="row">
-														<div class="col-xs-12 col-sm-6">
-															<div class="widget-box transparent">
-																<div class="widget-header widget-header-small">
-																	<h4 class="widget-title smaller">
-																		<i class="ace-icon fa fa-check-square-o bigger-110"></i>
-																		Little About Me
-																	</h4>
-																</div>
-
-																<div class="widget-body">
-																	<div class="widget-main">
-																		
-<form>
-    															<input type="hidden" name="hiddenField" />
-																</form>
-
-																<span><p>I am a skilled person i can do this and tht</p></span>
-
-																
-
-																<script type="text/javascript">
-																var replaceWith = $('<input name="temp" type="text" />'),
-															    connectWith = $('input[name="hiddenField"]');
-
-																$('p').inlineEdit(replaceWith, connectWith);
-																</script>
-																		<p>
-																			Thanks for visiting my profile.
-																		</p>
-																	</div>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-xs-12 col-sm-6">
-															<div class="widget-box transparent">
-																<div class="widget-header widget-header-small header-color-blue2">
-																	<h4 class="widget-title smaller">
-																		<i class="ace-icon fa fa-lightbulb-o bigger-120"></i>
-																		My Skills
-																	</h4>
-																</div>
-
-																<div class="widget-body">
-																	<div class="widget-main padding-16">
-																		<div class="clearfix">
-																			<div class="grid3 center">
-																				<div class="easy-pie-chart percentage" data-percent="45" data-color="#CA5952">
-																					<span class="percent">45</span>%
-																				</div>
-
-																				<div class="space-2"></div>
-																				Graphic Design
-																			</div>
-
-																			<div class="grid3 center">
-																				<div class="center easy-pie-chart percentage" data-percent="90" data-color="#59A84B">
-																					<span class="percent">90</span>%
-																				</div>
-
-																				<div class="space-2"></div>
-																				HTML5 & CSS3
-																			</div>
-
-																			<div class="grid3 center">
-																				<div class="center easy-pie-chart percentage" data-percent="80" data-color="#9585BF">
-																					<span class="percent">80</span>%
-																				</div>
-
-																				<div class="space-2"></div>
-																				Javascript/jQuery
-																			</div>
-																		</div>
-
-																		<div class="hr hr-16"></div>
-
-																		<div class="profile-skills">
-																			<div class="progress">
-																				<div class="progress-bar" style="width:80%">
-																					<span class="pull-left">HTML5 & CSS3</span>
-																					<span class="pull-right">80%</span>
-																				</div>
-																			</div>
-
-																			<div class="progress">
-																				<div class="progress-bar progress-bar-success" style="width:72%">
-																					<span class="pull-left">Javascript & jQuery</span>
-
-																					<span class="pull-right">72%</span>
-																				</div>
-																			</div>
-
-																			<div class="progress">
-																				<div class="progress-bar progress-bar-purple" style="width:70%">
-																					<span class="pull-left">PHP & MySQL</span>
-
-																					<span class="pull-right">70%</span>
-																				</div>
-																			</div>
-
-																			<div class="progress">
-																				<div class="progress-bar progress-bar-warning" style="width:50%">
-																					<span class="pull-left">Wordpress</span>
-
-																					<span class="pull-right">50%</span>
-																				</div>
-																			</div>
-
-																			<div class="progress">
-																				<div class="progress-bar progress-bar-danger" style="width:38%">
-																					<span class="pull-left">Photoshop</span>
-
-																					<span class="pull-right">38%</span>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
+													
 												</div><!-- /#home -->
 
 												<div id="feed" class="tab-pane">
-													<div class="profile-feed row">
-														<h1>Here gaurav's page will come..</h1>
+													<div class="row">
+														<div class="col-xs-12 col-sm-8">
+															<div class="widget-box">
+																<div class="widget-body">
+																 <div class="widget-main">	
+																	
+																		<div class="form-group">
+																			<div>
+																				<label class="col-sm-3 control-label no-padding-left" for="form-field-1"> Job Profile </label>
+																				<div class="col-sm-9">
+																					<input type="text" id="form-field-1" placeholder=" Name of Job Profile" class="col-xs-10 col-sm-8" />
+																				</div><br>
+																				<label for="form-field-11">About Job</label>
+																					<textarea id="form-field-11" placeholder="Add remarks on Selected Job profile" class="autosize-transition form-control"></textarea>
+																				<br>
+																				<label class="control-label col-xs-12 col-sm-3 no-padding-left" for="message">Send to :</label>
+																				<div class="col-xs-12 col-sm-9">
+																					<select id="message" class="multiselect" multiple="">
+																						<option value="cheese">Student</option>
+																						<option value="tomatoes">Student TPC</option>
+																						<option value="mozarella">TPO</option>
+																					</select>
+																				</div>
+																				<br><br><br>
+																				
+																				<div class="form-group">
+																					<div class="col-xs-12">
+																						<input multiple="" type="file" id="id-input-file-3" />
+																					</div>
+																				</div>
+
+																				<br><br><br>
+																				<button class="btn btn-info" type="button">
+																					<i class="ace-icon fa fa-check bigger-110"></i>
+																					SEND
+																				</button>
+
+																				&nbsp; &nbsp; &nbsp;
+																				<button class="btn" type="reset">
+																					<i class="ace-icon fa fa-undo bigger-110"></i>
+																					Reset
+																				</button>
+																				
+																			</div>
+																	   
+																	   </div>
+
+																		
+																		
+																	</div>
+																	
+																</div>
+															</div>
+														</div><!-- /.span -->
 													
-													</div><!-- /.row -->
+														<div class="col-xs-12 col-sm-4">
+																<br>
+																<a href="#"  class="btn btn-primary btn-md">View Counseling Reports.</a>
+																	<br><br>
+																<a href="#" class="btn btn-warning btn-md">View Offer Letters.</a>
+																	<br><br>
+																	<div class="col-xs-12">
+																		<input type="file" id="id-input-file-2" />
+																	<a href="#"  class="btn btn-info btn-sm">Upload</a>
+																	</div>
+																
+													</div>
+													</div>
+
 
 													<div class="space-12"></div>
 
@@ -1404,62 +1199,82 @@ $.fn.inlineEdit = function(replaceWith, connectWith) {
 
 												<div id="friends" class="tab-pane">
 													
-													<div class="col-xs-10 widget-container-col">
-														<div class="widget-box">
-															<div class="widget-header widget-header-large">
-																<h4 class="widget-title">Job News</h4>
-
-																<div class="widget-toolbar">
-																	<a href="#" data-action="settings">
-																		<i class="ace-icon fa fa-cog"></i>
-																	</a>
-
-																	<a href="#" data-action="reload">
-																		<i class="ace-icon fa fa-refresh"></i>
-																	</a>
-
-																	<a href="#" data-action="collapse">
-																		<i class="ace-icon fa fa-chevron-up"></i>
-																	</a>
-
-																	<a href="#" data-action="close">
-																		<i class="ace-icon fa fa-times"></i>
-																	</a>
-																</div>
-															</div>
-
-															<div class="widget-body">
-																<div class="widget-main">
-																	<p class="alert alert-info">
-																		Purple Pages is here. . .
-																	</p>
-																</div>
-																
-														
-															<div class="widget-toolbox padding-8 clearfix">
-																
-																<button onclick="location.href = 'Apply.jsp';" class="btn btn-md btn-success pull-right">
-																	<span class="bigger-110">Register..!</span>
-
-																	<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
-																</button>
-															</div>
-															</div>
-															
-															
-
-														</div>
-												</div>
 												
 													
 															<!-- PAGE CONTENT BEGINS -->
+															
+															<br>
+															<a href="#" id="id-btn-dialog1" class="btn btn-purple btn-md">View Placement Performance</a>
+															<div id="dialog-message" class="hide">
+																		<p>
+																			<b>CREDIT SUISSE Interviews </b>
+																		</p>
+																		<p> Applied Students : <a href="#">97</a></p>
+																		<p>Shortlisted Candidates : 55</p>
+																		
+																		<div class="hr hr-12 hr-double"></div>
+																	</div><!-- #dialog-message -->
+															
 															<div class="row">
 																<div class="col-sm-9">
 																	<div class="space"></div>
 
 																	<div id="calendar"></div>
 																</div>
+																<div class="col-sm-3">
+																		<div class="widget-box transparent">
+																			<div class="widget-header">
+																				<h4>Draggable events</h4>
+																			</div>
 
+																			<div class="widget-body">
+																				<div class="widget-main no-padding">
+																					<div id="external-events">
+																						<div class="external-event label-grey" data-class="label-grey">
+																							<i class="ace-icon fa fa-arrows"></i>
+																							My Event 1
+																						</div>
+
+																						<div class="external-event label-success" data-class="label-success">
+																							<i class="ace-icon fa fa-arrows"></i>
+																							My Event 2
+																						</div>
+
+																						<div class="external-event label-danger" data-class="label-danger">
+																							<i class="ace-icon fa fa-arrows"></i>
+																							My Event 3
+																						</div>
+
+																						<div class="external-event label-purple" data-class="label-purple">
+																							<i class="ace-icon fa fa-arrows"></i>
+																							My Event 4
+																						</div>
+
+																						<div class="external-event label-yellow" data-class="label-yellow">
+																							<i class="ace-icon fa fa-arrows"></i>
+																							My Event 5
+																						</div>
+
+																						<div class="external-event label-pink" data-class="label-pink">
+																							<i class="ace-icon fa fa-arrows"></i>
+																							My Event 6
+																						</div>
+
+																						<div class="external-event label-info" data-class="label-info">
+																							<i class="ace-icon fa fa-arrows"></i>
+																							My Event 7
+																						</div>
+
+																						<label>
+																							<input type="checkbox" class="ace ace-checkbox" id="drop-remove" />
+																							<span class="lbl"> Remove after drop</span>
+																						</label>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																</div>
+								
 															</div>
 
 															<!-- PAGE CONTENT ENDS -->
@@ -1513,6 +1328,29 @@ $.fn.inlineEdit = function(replaceWith, connectWith) {
 				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
 			</a>
 		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script src="assets/js/jquery.2.1.1.min.js"></script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="assets/js/jquery.1.11.1.min.js"></script>
+<![endif]-->
+
+		<!--[if !IE]> -->
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
+</script>
 <![endif]-->
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
@@ -1747,6 +1585,20 @@ $.fn.inlineEdit = function(replaceWith, connectWith) {
 			</div>';
 		
 		
+			var modal = $(modal).appendTo('body');
+			modal.find('form').on('submit', function(ev){
+				ev.preventDefault();
+
+				calEvent.title = $(this).find("input[type=text]").val();
+				calendar.fullCalendar('updateEvent', calEvent);
+				modal.modal("hide");
+			});
+			modal.find('button[data-action=delete]').on('click', function() {
+				calendar.fullCalendar('removeEvents' , function(ev){
+					return (ev._id == calEvent._id);
+				})
+				modal.modal("hide");
+			});
 			
 			modal.modal('show').on('hidden', function(){
 				modal.remove();
@@ -1795,6 +1647,41 @@ $.fn.inlineEdit = function(replaceWith, connectWith) {
 						else title.text($title);
 					}
 				}));
+
+				$( "#id-btn-dialog1" ).on('click', function(e) {
+							e.preventDefault();
+					
+							var dialog = $( "#dialog-message" ).removeClass('hide').dialog({
+								modal: true,
+								title: "<div class='widget-header widget-header-large'><h4 class='smaller'><i class='ace-icon fa fa-check'></i> Details of Candidates applied for Placement.</h4></div>",
+								title_html: true,
+								buttons: [ 
+									{
+										text: "Cancel",
+										"class" : "btn btn-minier",
+										click: function() {
+											$( this ).dialog( "close" ); 
+										} 
+									},
+									{
+										text: "OK",
+										"class" : "btn btn-primary btn-minier",
+										click: function() {
+											$( this ).dialog( "close" ); 
+										} 
+									}
+								]
+							});
+					
+							/**
+							dialog.data( "uiDialog" )._title = function(title) {
+								title.html( this.options.title );
+							};
+							**/
+						});
+
+		
+		//another option is using modals
 				$('#avatar2').on('click', function(){
 					var modal = 
 					'<div class="modal fade">\
@@ -1821,10 +1708,61 @@ $.fn.inlineEdit = function(replaceWith, connectWith) {
 					</div>';
 					
 					
-				
+					var modal = $(modal);
+					modal.modal("show").on("hidden", function(){
+						modal.remove();
+					});
+			
+					var working = false;
+			
+					var form = modal.find('form:eq(0)');
+					var file = form.find('input[type=file]').eq(0);
+					file.ace_file_input({
+						style:'well',
+						btn_choose:'Click to choose new avatar',
+						btn_change:null,
+						no_icon:'ace-icon fa fa-picture-o',
+						thumbnail:'small',
+						before_remove: function() {
+							//don't remove/reset files while being uploaded
+							return !working;
+						},
+						allowExt: ['jpg', 'jpeg', 'png', 'gif'],
+						allowMime: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
+					});
+			
+					form.on('submit', function(){
+						if(!file.data('ace_input_files')) return false;
+						
+						file.ace_file_input('disable');
+						form.find('button').attr('disabled', 'disabled');
+						form.find('.modal-body').append("<div class='center'><i class='ace-icon fa fa-spinner fa-spin bigger-150 orange'></i></div>");
+						
+						var deferred = new $.Deferred;
+						working = true;
+						deferred.done(function() {
+							form.find('button').removeAttr('disabled');
+							form.find('input[type=file]').ace_file_input('enable');
+							form.find('.modal-body > :last-child').remove();
+							
+							modal.modal("hide");
+			
+							var thumb = file.next().find('img').data('thumb');
+							if(thumb) $('#avatar2').get(0).src = thumb;
+			
+							working = false;
+						});
+						
+						
+						setTimeout(function(){
+							deferred.resolve();
+						} , parseInt(Math.random() * 800 + 800));
+			
+						return false;
+					});
 					
 			});
 	</script>
-
+	
 	</body>
 </html>
