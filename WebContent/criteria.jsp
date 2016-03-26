@@ -123,13 +123,24 @@
 					<div class="widget-body">
 						<div class="widget-main padding-24">
 							<div class="row align-center">
-							<h3>
+							<h1>
 													<i class="ace-icon fa fa-spinner fa-spin orange bigger-125"></i>
-													Kindly Wait, We are checking your criteria
+													Kindly Wait, We are checking your criteria. . .
 													
-												</h3>
+												</h1>
 							
 						
+							</div>
+							<br><br><br><br><br><br>
+							<div class="row">
+							<span><h3>if criteria successful</h3><span><span><button onclick="location.href = 'success.jsp';" class="btn btn-info" type="button">
+								<i class="ace-icon fa fa-check bigger-110"></i> Successful</span>
+							</button>
+							</div>
+							<div class="row">
+							<h3>if criteria not successful</h3><span><button onclick="location.href = 'fail.jsp';" class="btn btn-info" type="button">
+								<i class="ace-icon fa fa-check bigger-110"></i> Unsuccessful</span>
+							</button>
 							</div>
 							<!-- /.row -->
 
@@ -137,16 +148,8 @@
 </div></div></div></div>
 		
 		<jsp:directive.include file="Footer.jsp" />
-		<script src="assets/js/jquery-ui.custom.min.js"></script>
-		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
-		<script src="assets/js/bootbox.min.js"></script>
-		<script src="assets/js/jquery.easypiechart.min.js"></script>
-		<script src="assets/js/jquery.gritter.min.js"></script>
+		
 		<script src="assets/js/spin.min.js"></script>
-
-		<!-- ace scripts -->
-		<script src="assets/js/ace-elements.min.js"></script>
-		<script src="assets/js/ace.min.js"></script>
 
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
